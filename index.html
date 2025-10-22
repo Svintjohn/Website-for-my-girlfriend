@@ -6,6 +6,7 @@
     <title>My Love for You</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
@@ -27,7 +28,6 @@
         <div class="container">
             <h2>Welcome, My Love</h2>
 
-            <!-- Updated Dearest Card -->
             <div class="dearest-card">
                 <img src="img/home.jpg" alt="For My Dearest" class="dearest-image">
                 <div class="dearest-content">
@@ -131,7 +131,6 @@
 
     <section id="flowers" class="flowers-section">
         <h2 class="section-title">Flowers for You 🌷</h2>
-        <!-- Voicemail Player (still visible for manual control if needed) -->
         <div class="voicemail-container">
             <h3>Play this, jo 💌</h3>
             <audio controls class="voicemail-player">
@@ -151,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flower-card" id="flower-2">  <!-- Added ID for targeting -->
+            <div class="flower-card" id="flower-2">  
                 <div class="flower-inner">
                     <div class="flower-front">
                         <img src="img/flower1.jpg" alt="Flower 2">
@@ -172,6 +171,14 @@
                 </div>
             </div>      
     </section>
+
+        <audio id="bg-music" src="audio/bgmusic.mp3 " loop></audio>
+
+        <div id="music-control" class="music-btn">
+            <i class="fas fa-music"></i> 
+        </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>
