@@ -13,7 +13,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-/* REVIEW: body::before adds subtle repeating SVG pattern. It's cosmetic; keep or remove as desired */
 body::before {
     content: '';
     position: fixed;
@@ -24,6 +23,7 @@ body::before {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ff6b9d" opacity="0.1"/></svg>') repeat;
     z-index: -1;
     animation: sparkle 10s infinite linear;
+
 }
 @keyframes sparkle {
     0% { transform: translateY(0); }
@@ -36,7 +36,6 @@ body::before {
 }
 
 /* Floating Hearts */
-/* REVIEW: .floating-hearts not present in HTML. If unused, you can remove these rules. */
 .floating-hearts {
     position: fixed;
     top: 0;
@@ -201,7 +200,6 @@ section {
     margin-left: 280px;
     animation: fadeInUp 1s ease-out;
 }
-/* REVIEW: margin-left: 280px aligns sections with fixed nav. Keep it unless you want fullwidth under nav. */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -747,3 +745,43 @@ footer {
     box-shadow: 0 0 30px rgba(255, 182, 193, 1);
     background: rgba(255, 20, 147, 0.9);
 }
+
+/*RESPONSIVE - TABLET & MOBILE*/
+
+@media (max-width: 1024px) {
+    nav { width:220px; border-radius:0 18px 18px 0; }
+    .section { margin-left:220px; padding-top:84px; }
+    .video-grid { grid-template-columns: repeat(2, 1fr); gap:20px; }
+    .dearest-image { width:200px; height:260px; }
+    .dearest-card { max-width:760px; padding:18px; border-radius:16px; }
+    .flower-card { width:320px; height:420px; }
+    footer { margin-left:220px; }
+    .hamburger { display:block; } 
+}
+
+@media (max-width: 420px) {
+    nav { transform: translateX(-110%); position: fixed; height:100vh; width:260px; left:0; top:0; border-radius:0 14px 14px 0; }
+    nav.active { transform: translateX(0); box-shadow: 18px 0 60px rgba(0,0,0,0.28); }
+    .hamburger { display:block; left:14px; top:14px; }
+    .section { margin-left:0; padding: 90px 16px 60px; }
+    footer { margin-left:0; }
+    .video-grid { grid-template-columns: 1fr; gap:18px; }
+    .video-item video { height: 220px; }
+    .dearest-card { flex-direction: column; align-items:center; gap:14px; padding:16px; }
+    .dearest-image { width:86%; height: auto; max-height: 360px; }
+    .dearest-text { font-size:1.8rem; }
+    .flower-container { flex-direction:column; gap:18px; }
+    .flower-card { width:90%; height:auto; aspect-ratio: 3 / 4; }
+    .play-overlay { font-size:2.2rem; }
+    .music-btn { right: 50%; left: auto; transform: translateX(50%); } /* centered bottom for phones */
+    #nav-menu a { padding:14px 18px; font-size:1.05rem; width:95%; }
+}
+
+@media (min-width: 1400px) {
+    .section { padding-top:120px; }
+    .video-grid { gap:32px; }
+    .dearest-card { padding: 30px; }
+}
+
+a:focus, button:focus { outline: 3px solid rgba(255,107,157,0.28); outline-offset: 4px; border-radius: 8px; }
+
