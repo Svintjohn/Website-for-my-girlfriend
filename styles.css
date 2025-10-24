@@ -759,7 +759,7 @@ footer {
     .hamburger { display:block; } 
 }
 
-@media (max-width: 420px) {
+@media (max-width: 414px) {
     nav { transform: translateX(-110%); position: fixed; height:100vh; width:260px; left:0; top:0; border-radius:0 14px 14px 0; }
     nav.active { transform: translateX(0); box-shadow: 18px 0 60px rgba(0,0,0,0.28); }
     .hamburger { display:block; left:14px; top:14px; }
@@ -773,8 +773,21 @@ footer {
     .flower-container { flex-direction:column; gap:18px; }
     .flower-card { width:90%; height:auto; aspect-ratio: 3 / 4; }
     .play-overlay { font-size:2.2rem; }
-    .music-btn { right: 50%; left: auto; transform: translateX(50%); } /* centered bottom for phones */
+    .music-btn { right: 50%; left: auto; transform: translateX(50%); }
     #nav-menu a { padding:14px 18px; font-size:1.05rem; width:95%; }
+    nav { width:220px; border-radius:0 18px 18px 0; }
+    .section { margin-left:220px; padding-top:84px; }
+    .video-grid { grid-template-columns: repeat(2, 1fr); gap:20px; }
+    .dearest-image { width:200px; height:260px; }
+    .dearest-card { max-width:760px; padding:18px; border-radius:16px; }
+    .flower-card { width:320px; height:420px; }
+    footer { margin-left:220px; }
+    .hamburger { display:block; } 
+    .flower-back {
+        font-size: 1rem;
+        padding: 20px;
+        overflow: scroll;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -784,4 +797,6 @@ footer {
 }
 
 a:focus, button:focus { outline: 3px solid rgba(255,107,157,0.28); outline-offset: 4px; border-radius: 8px; }
-
+button, .music-btn {
+    cursor: pointer;
+}
